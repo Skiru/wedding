@@ -21,7 +21,7 @@ pipeline {
             steps{
                 sh '''
                 git reset --hard HEAD
-                sudo git clean -fdx
+                git clean -fdx
                 '''
             }
         }
