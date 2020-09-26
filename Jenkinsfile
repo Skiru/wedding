@@ -41,7 +41,7 @@ pipeline {
         stage('Building php image') {
           steps{
             script {
-              DOCKER_PHP_IMAGE = docker.build(FULL_PHP_IMAGE_NAME, "-f ./docker/php/Dockerfile . --no-cache")
+              PHP_IMAGE = docker.build(FULL_PHP_IMAGE_NAME, "-f ./docker/php/Dockerfile . --no-cache")
             }
           }
         }
@@ -49,7 +49,7 @@ pipeline {
         stage('Building assets image') {
           steps{
             script {
-              DOCKER_ASSETS_IMAGE = docker.build(FULL_ASSETS_IMAGE_NAME, "-f ./docker/assets/Dockerfile . --no-cache")
+              ASSETS_IMAGE = docker.build(FULL_ASSETS_IMAGE_NAME, "-f ./docker/assets/Dockerfile . --no-cache")
             }
           }
         }
@@ -58,7 +58,7 @@ pipeline {
             steps{
                 script {
                   docker.withRegistry( '', REGISTRY_CREDENTIALS ) {
-                    DOCKER_PHP_IMAGE.push()
+                    PHP_IMAGE.push()
                   }
                 }
            }
