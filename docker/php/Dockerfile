@@ -6,10 +6,7 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-p
 FROM php:7.4-fpm-alpine
 
 RUN apk add --no-cache \
-    $PHPIZE_DEPS \
-    openssl-dev && \
-    docker-php-ext-install bcmath && \
-    docker-php-ext-enable bcmath && \
+    $PHPIZE_DEPS && \
     docker-php-ext-install opcache && \
     docker-php-ext-enable opcache && \
     rm -rf /tmp/pear

@@ -82,10 +82,10 @@ pipeline {
           }
         }
 
-        stage('Build blog application') {
+        stage('Build wedding application') {
             steps{
                 sshagent (credentials: ['purple-clouds-server']) {
-                    sh 'echo "docker login --username mkoziol --password pamietamhaslo;IMAGE_BUILD_TAG=${env.PHP_IMAGE_NAME}-$BUILD_NUMBER; export IMAGE_BUILD_TAG; WEDDING_NGINX_IMAGE_BUILD_TAG=${env.ASSETS_IMAGE_NAME}-$BUILD_NUMBER; export WEDDING_NGINX_IMAGE_BUILD_TAG; docker-compose -f /var/www/PurpleClouds/wedding/docker-compose.yml up -d;" | ssh -o StrictHostKeyChecking=no -l root 77.55.222.35'
+                    sh 'echo "docker login --username mkoziol --password pamietamhaslo;WEDDING_PHP_IMAGE_BUILD_TAG=${env.PHP_IMAGE_NAME}-$BUILD_NUMBER; export WEDDING_PHP_IMAGE_BUILD_TAG; WEDDING_ASSETS_IMAGE_BUILD_TAG=${env.ASSETS_IMAGE_NAME}-$BUILD_NUMBER; export WEDDING_ASSETS_IMAGE_BUILD_TAG; docker-compose -f /var/www/PurpleClouds/wedding/docker-compose.yml up -d;" | ssh -o StrictHostKeyChecking=no -l root 77.55.222.35'
                 }
             }
         }
