@@ -33,7 +33,7 @@ pipeline {
                      doGenerateSubmoduleConfigurations: false,
                      extensions: [],
                      submoduleCfg: [],
-                     userRemoteConfigs: [[credentialsId: 'wedding-repository', url: "git@github.com:Skiru/wedding.git"]]]
+                     userRemoteConfigs: [[credentialsId: 'blog-repository', url: "git@github.com:Skiru/wedding.git"]]]
                 )
             }
         }
