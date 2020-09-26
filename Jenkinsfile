@@ -9,7 +9,7 @@ pipeline {
         ASSETS_IMAGE = ""
         PHP_IMAGE_NAME = "wedding-php"
         ASSETS_IMAGE_NAME = "blog-assets"
-        FULL_PHP_IMAGE_NAME = "${REGISTRY}:{PHP_IMAGE_NAME}-${BUILD_NUMBER}"
+        FULL_PHP_IMAGE_NAME = "${REGISTRY}:${PHP_IMAGE_NAME}-${BUILD_NUMBER}"
         FULL_ASSETS_IMAGE_NAME = "${REGISTRY}:${ASSETS_IMAGE_NAME}-${BUILD_NUMBER}"
     }
 
