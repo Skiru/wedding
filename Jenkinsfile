@@ -5,6 +5,7 @@ pipeline {
         HOME = "${WORKSPACE}"
         REGISTRY = "mkoziol/purpleclouds"
         REGISTRY_CREDENTIALS = 'dockerhub'
+        GITHUB_CREDENTIALS = 'github-credential'
         PHP_IMAGE = ""
         ASSETS_IMAGE = ""
         PHP_IMAGE_NAME = "wedding-php"
@@ -33,7 +34,7 @@ pipeline {
                      doGenerateSubmoduleConfigurations: false,
                      extensions: [],
                      submoduleCfg: [],
-                     userRemoteConfigs: [[credentialsId: 'blog-repository', url: "git@github.com:Skiru/wedding.git"]]]
+                     userRemoteConfigs: [[credentialsId: "${GITHUB_CREDENTIALS}", url: "git@github.com:Skiru/wedding.git"]]]
                 )
             }
         }
@@ -82,10 +83,16 @@ pipeline {
           }
         }
 
-        stage('Build wedding application') {
+        stage('Build ecorp application') {
             steps{
                 sshagent (credentials: ['purple-clouds-server']) {
-                    sh 'echo "docker login --username mkoziol --password pamietamhaslo;WEDDING_PHP_IMAGE_BUILD_TAG=$FULL_PHP_IMAGE_NAME; export WEDDING_PHP_IMAGE_BUILD_TAG; WEDDING_ASSETS_IMAGE_BUILD_TAG=$FULL_ASSETS_IMAGE_NAME; export WEDDING_ASSETS_IMAGE_BUILD_TAG; docker-compose -f /var/www/PurpleClouds/wedding/docker-compose.yml up -d;" | ssh -o StrictHostKeyChecking=no -l root 77.55.222.35'
+                    sh 'echo \
+                    "docker login --username mkoziol --password pamietamhaslo;\
+                    export WEDDING_ASSETS_IMAGE_BUILD_TAG=${FULL_ASSETS_IMAGE_NAME};\
+                    export WEDDING_PHP_IMAGE_BUILD_TAG=${FULL_PHP_IMAGE_NAME};\
+                    docker-compose -f /var/www/PurpleClouds/wedding/docker-compose.yml up -d;\
+                    docker image prune -a -f || true;"\
+                    | ssh -o StrictHostKeyChecking=no -l root 77.55.222.35;'
                 }
             }
         }
