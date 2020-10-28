@@ -1,4 +1,4 @@
-FROM composer as composer-prod
+FROM composer:1.10.16 as composer-prod
 WORKDIR /app
 COPY ./ ./
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-progress --no-suggest --ignore-platform-reqs
