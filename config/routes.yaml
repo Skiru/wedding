@@ -1,3 +1,13 @@
-homepage:
+#Security
+login:
     path: /
-    controller: App\Controller\WeddingHomepageController::homepage
+    controller: App\Controller\WeddingHomepageController::login
+
+logout:
+    path: /logout
+    controller: App\Controller\WeddingHomepageController::logout
+
+#wedding routes
+wedding:
+    path: /slub
+    controller: App\Controller\WeddingHomepageController::wedding

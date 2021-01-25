@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">KAMILA & MATEUSZ</h1>
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        <label for="inputPassword">Aby przejść dalej wprowadź hasło, które znajduje się na zaproszeniu</label>
+
+                        <div class="form-group col-sm-7 mx-auto">
+                            <input type="password" name="password" id="inputPassword" class="form-control text-center" required autofocus>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary" type="submit">
+                                Przejdź dalej
+                            </button>
+                        </div>
+
+                    </form>
+            </div>
+        </div>
+    </header>
+{% endblock %}

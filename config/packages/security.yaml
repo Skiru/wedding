@@ -1,0 +1,23 @@
+security:
+    encoders:
+      Symfony\Component\Security\Core\User\User: 'bcrypt'
+    providers:
+      backend_users:
+        memory:
+          users:
+            wedding_guest: { password: '$2y$13$eJCtpoVhNEfoBqBrLenKLuBCSoZ5rQJExPFnKl3K7dPGIIV7yaIcG', roles: ['ROLE_GUEST'] }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            lazy: true
+            guard:
+              authenticators:
+                - App\Security\LoginFormAuthenticator
+            logout:
+              path: logout
+              target: login
+    access_control:
+         - { path: ^/slub, roles: ROLE_GUEST }
