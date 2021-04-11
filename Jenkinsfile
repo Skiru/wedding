@@ -91,7 +91,8 @@ pipeline {
                     export WEDDING_ASSETS_IMAGE_BUILD_TAG=${FULL_ASSETS_IMAGE_NAME};\
                     export WEDDING_PHP_IMAGE_BUILD_TAG=${FULL_PHP_IMAGE_NAME};\
                     docker-compose -f /var/www/PurpleClouds/wedding/docker-compose.yml up -d;\
-                    docker image prune -a -f || true;"\
+                    docker image prune -a -f || true;\
+                    docker exec -it wedding_wedding_purple_clouds_php_1 /bin/sh /var/www/html/scripts/deployment.sh;"\
                     | ssh -o StrictHostKeyChecking=no -l root 77.55.194.92;'
                 }
             }

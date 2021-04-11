@@ -3,20 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content="Strona Ślubu Kamili i Mateusza" />
+    <meta name="author" content="Mateusz Kozioł" />
     <title>{% block title %}Kamila & Mateusz Wedding{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/wedding-rings.png') }}" />
-    <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180850695-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -25,10 +21,11 @@
 
         gtag('config', 'UA-180850695-1');
     </script>
+
+
 </head>
 <body id="page-top">
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -36,6 +33,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
 

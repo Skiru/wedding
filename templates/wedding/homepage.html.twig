@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+{% endblock %}
+
 {% block body %}
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -128,6 +132,16 @@
             </div>
         </div>
     </section>
+
+    <section class="contact-section  bg-light" id="places-map">
+        <div class="container mb-4">
+            <h2>Mapa dojazdu</h2>
+            <div class="row">
+                <div id ="wedding-map" style = "width:100%; height:600px;"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container">Copyright © Kamila & Mateusz 2021</div>
@@ -137,6 +151,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Aug 7, 2021 14:00:00").getTime();
@@ -166,5 +181,21 @@
                 document.getElementById("countdown").innerHTML = "ŚLUB <3";
             }
         }, 1000);
+    </script>
+
+    <script>
+        // Creating map options
+        const mapOptions = {
+            center: [17.385044, 78.486671],
+            zoom: 10
+        }
+
+        // Creating a map object
+        const map = new L.map('wedding-map', mapOptions);
+
+        // Creating a Layer object
+        const layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        // Adding layer to the map
+        map.addLayer(layer);
     </script>
 {% endblock %}

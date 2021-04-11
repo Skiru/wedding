@@ -10,7 +10,7 @@
                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}
 
-                        <label for="inputPassword">Aby przejść dalej wprowadź hasło, które znajduje się na zaproszeniu</label>
+                        <label for="inputPassword" class="lead text-white">Wprowadź hasło</label>
 
                         <div class="form-group col-sm-7 mx-auto">
                             <input type="password" name="password" id="inputPassword" class="form-control text-center" required autofocus>
@@ -19,7 +19,7 @@
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                         <div class="form-group">
-                            <button class="btn btn-lg btn-primary" type="submit">
+                            <button class="btn btn-lg btn-primary text-black" type="submit">
                                 Przejdź dalej
                             </button>
                         </div>
