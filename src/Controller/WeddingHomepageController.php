@@ -45,7 +45,7 @@ final class WeddingHomepageController extends AbstractController
         ]);
     }
 
-    private function getAbsolutePathForRoute(string $routeName, array $params = [], string $scheme = 'http'): string
+    private function getAbsolutePathForRoute(string $routeName, array $params = [], string $scheme = 'https'): string
     {
         $url = $this->generateUrl($routeName, $params, UrlGeneratorInterface::ABSOLUTE_URL);
 
