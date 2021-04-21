@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <link href="{{ asset('assets/css/map.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block body %}
@@ -9,7 +12,9 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">Kamila & Mateusz</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -17,6 +22,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#wesele">Ślub i Wesele</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#kontakt">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#mapaDojazdu">Mapa</a></li>
                 </ul>
             </div>
         </div>
@@ -37,20 +43,22 @@
         <div class="container">
             <!-- Project One Row-->
             <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                <div class="col-lg-6"><img class="img-fluid" src="{{asset('assets/img/demo-image-01.jpg')}}" alt="" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="{{ asset('assets/img/demo-image-01.jpg') }}" alt=""/>
+                </div>
                 <div class="col-lg-6">
                     <div class="bg-yellow text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
                                 <h4 class="text-black">Biała Przystań</h4>
                                 <p class="mb-0 text-black-50">
-                                    Sala weselna znajduja się w miejscowości Łęki Dolne w województwie podkarpackim w odległości
+                                    Sala weselna znajduja się w miejscowości Łęki Dolne w województwie podkarpackim w
+                                    odległości
                                     20km od Tarnowa.
                                     <a class="text-dark" href="https://bialaprzystan.pl/en" target="_blank">
                                         Strona internetowa obiektu
                                     </a>
                                 </p>
-                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                                <hr class="d-none d-lg-block mb-0 ml-0"/>
                             </div>
                         </div>
                     </div>
@@ -58,20 +66,23 @@
             </div>
             <!-- Project Two Row-->
             <div class="row justify-content-center no-gutters">
-                <div class="col-lg-6"><img class="img-fluid" src="{{asset('assets/img/demo-image-02.jpg')}}" alt="" /></div>
+                <div class="col-lg-6"><img class="img-fluid" src="{{ asset('assets/img/demo-image-02.jpg') }}" alt=""/>
+                </div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-y text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-black">Parafia Rzymskokatolicka pw. Św. Katarzyny PM w Ryglicach</h4>
                                 <p class="mb-0 text-black-50">
-                                    Kościół Parafialny, którego terytorium obejmuje Ryglice, część Bistuszowej, Joniny oraz Uniszową.
+                                    Kościół Parafialny, którego terytorium obejmuje Ryglice, część Bistuszowej, Joniny
+                                    oraz Uniszową.
                                     Znajduje się w mieście Ryglice.
-                                    <a class="text-bold text-dark" href="https://ryglice-wiz.diecezja.tarnow.pl/#start" target="_blank">
+                                    <a class="text-bold text-dark" href="https://ryglice-wiz.diecezja.tarnow.pl/#start"
+                                       target="_blank">
                                         Strona internetowa Parafii
                                     </a>
                                 </p>
-                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                                <hr class="d-none d-lg-block mb-0 mr-0"/>
                             </div>
                         </div>
                     </div>
@@ -88,8 +99,8 @@
                         <div class="card-body text-center">
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Biała przystań</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50">
+                            <hr class="my-4"/>
+                            <div class="small text-black">
                                 Łęki Dolne 194B <br>
                                 39-221 Łęki Dolne
                             </div>
@@ -97,19 +108,26 @@
                         <div class="card-body text-center">
                             <i class="fas fa-map-marker text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Kościół w Ryglicach</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50">33-160 Ryglice, Ks. J. Wyrwy 6</div>
+                            <hr class="my-4"/>
+                            <div class="text-black">33-160 Ryglice, Ks. J. Wyrwy 6</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <i class="fas fa-home text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Email</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50">mateusz.koziol15@gmail.com</div>
-                            <div class="small text-black-50">kamila.e.lachowicz@gmail.com</div>
+                            <hr class="my-4"/>
+                            <div class="text-black">mateusz.koziol15@gmail.com</div>
+                            <div class="text-black">kamila.e.lachowicz@gmail.com</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-home text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Dom panny młodej</h4>
+                            <hr class="my-4"/>
+                            <div class="text-black">Ryglice</div>
+                            <div class="text-black">ul. 11 listopada 49</div>
                         </div>
                     </div>
                 </div>
@@ -118,9 +136,16 @@
                         <div class="card-body text-center">
                             <i class="fas fa-mobile-alt text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Telefon</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50"><span class="text-muted">Kamila</span> 537 579 689 </div>
-                            <div class="small text-black-50"><span class="text-muted">Mateusz</span> 696 536 890 </div>
+                            <hr class="my-4"/>
+                            <div class="text-black">Kamila 537 579 689</div>
+                            <div class="text-black">Mateusz 696 536 890</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Dom pana młodego</h4>
+                            <hr class="my-4"/>
+                            <div class="text-black">Ilkowice</div>
+                            <div class="text-black">ul. Partyzantów 67</div>
                         </div>
                     </div>
                 </div>
@@ -134,11 +159,14 @@
     </section>
 
     <section class="contact-section  bg-light" id="places-map">
-        <div class="container mb-4">
-            <h2>Mapa dojazdu</h2>
-            <div class="row">
-                <div id ="wedding-map" style = "width:100%; height:600px;"></div>
+        <div class="container-fluid">
+            <div class="container pb-4">
+                <div class="row">
+                    <h2 class="text-black-50" id="mapaDojazdu">Mapa dojazdu</h2>
+                    <div id="map"></div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -151,13 +179,81 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script>
+        let map = L.map('map').setView([49.98820248617115, 21.131889737909038], 11);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoibWtvemlvbCIsImEiOiJjajh2dzg5NmgwMWR4MndwamUybnduemRhIn0.lIN1bMCXbWkQ3mXLjtkFkQ'
+        }).addTo(map);
+
+        const groomIcon = L.icon({
+            iconUrl: '{{ groomImageUrl }}',
+            iconSize:     [36, 36],
+            shadowSize:   [36, 36],
+            iconAnchor:   [36, 36],
+            shadowAnchor: [36, 36],
+            popupAnchor:  [-3, -37]
+        });
+
+        const brideIcon = L.icon({
+            iconUrl: '{{ brideImageUrl }}',
+            iconSize:     [36, 36],
+            shadowSize:   [36, 36],
+            iconAnchor:   [36, 36],
+            shadowAnchor: [36, 36],
+            popupAnchor:  [-3, -37]
+        });
+
+        const churchIcon = L.icon({
+            iconUrl: '{{ churchImageUrl }}',
+            iconSize:     [36, 36],
+            shadowSize:   [36, 36],
+            iconAnchor:   [36, 36],
+            shadowAnchor: [36, 36],
+            popupAnchor:  [-3, -37]
+        });
+
+        const cutleryIcon = L.icon({
+            iconUrl: '{{ cutleryImageUrl }}',
+            iconSize:     [36, 36],
+            shadowSize:   [36, 36],
+            iconAnchor:   [36, 36],
+            shadowAnchor: [36, 36],
+            popupAnchor:  [-3, -37]
+        });
+
+
+        const bride = L.marker([49.87283933244904, 21.13669625010624], {icon: brideIcon}).bindPopup(
+            "<strong>Dom Panny Młodej</strong> </br> </br>" +
+            "<a class='btn badge-light text-black' href='https://goo.gl/maps/C9ag8gybUrEoAtwJ8' target='_blank'>Przejdź do nawigacji</a>"
+        ).addTo(map);
+
+        const groom = L.marker([50.09359943383855, 20.895683692105777], {icon: groomIcon}).bindPopup(
+            "<strong>Dom Pana Młodego</strong> </br> </br>" +
+            "<a class='btn badge-light text-black' href='https://goo.gl/maps/kr5Xm4uSHXKXJosS8' target='_blank'>Przejdź do nawigacji</a>"
+        ).addTo(map);
+
+        const church = L.marker([49.88744073033373, 21.136696256055277], {icon: churchIcon}).bindPopup(
+            "<strong>Kościół pw. Św. Katarzyny PM w Ryglicach</strong> </br> </br>" +
+            "<a class='btn badge-light text-black' href='https://goo.gl/maps/JjdYh1WeQZkwdx859' target='_blank'>Przejdź do nawigacji</a>"
+        ).addTo(map);
+        const restaurant = L.marker([50.004092987882544, 21.24037971522894], {icon: cutleryIcon}).bindPopup(
+            "<strong>Sala bankietowa Biała Przystań</strong> </br> </br>" +
+            "<a class='btn badge-light text-black' href='https://goo.gl/maps/4MMYuDkmd6GHPhRf9' target='_blank'>Przejdź do nawigacji</a>"
+        ).addTo(map);
+    </script>
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Aug 7, 2021 14:00:00").getTime();
 
         // Update the count down every 1 second
-        var x = setInterval(function() {
+        var x = setInterval(function () {
 
             // Get today's date and time
             var now = new Date().getTime();
@@ -181,21 +277,5 @@
                 document.getElementById("countdown").innerHTML = "ŚLUB <3";
             }
         }, 1000);
-    </script>
-
-    <script>
-        // Creating map options
-        const mapOptions = {
-            center: [17.385044, 78.486671],
-            zoom: 10
-        }
-
-        // Creating a map object
-        const map = new L.map('wedding-map', mapOptions);
-
-        // Creating a Layer object
-        const layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-        // Adding layer to the map
-        map.addLayer(layer);
     </script>
 {% endblock %}

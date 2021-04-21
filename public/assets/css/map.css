@@ -1,0 +1,14 @@
+#map {
+    height: 650px;
+    width: 100vw;
+}
+
+#map {
+    border: 1px solid gold;
+}
+
+@media all and (max-width: 600px) {
+    #map {
+        height: 350px;
+    }
+}
