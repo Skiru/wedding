@@ -4089,6 +4089,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -10141,6 +10142,7 @@ body {
 #mainNav {
   min-height: 3.5rem;
   background-color: #fff;
+
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10167,7 +10169,8 @@ body {
 }
 @media (min-width: 992px) {
   #mainNav {
-    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px, #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    /*background: linear-gradient(#FDB931, #FEDB37);*/
+    /*text-shadow: #FEDB37 0px 0px 1px,   #FEDB37 0px 0px 1px,   #FEDB37 0px 0px 1px, #FEDB37 0px 0px 1px,   #FEDB37 0px 0px 1px,   #FEDB37 0px 0px 1px;*/
     font-size: 2rem;
     font-weight: bold;
     padding-top: 0;
@@ -10178,14 +10181,15 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
+    color: #FEDB37;
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: #FFFFFF;
+    color: #FEDB37;
   }
-  #mainNav .nav-link:hover {
+  #mainNav .nav-link:hover, #mainNav .navbar-brand:hover  {
     color: rgba(253,185,49, 1);
   }
   #mainNav .nav-link:active {
@@ -10231,12 +10235,14 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(258,185,49, 0.3) 0%, rgba(138, 110, 47, 0.7) 75%, rgba(254,219,55, 0.5) 100%), url("../img/bg-masthead.jpg");
+  /*background: linear-gradient(to bottom, rgba(258,185,49, 0.3) 0%, rgba(138, 110, 47, 0.7) 75%, rgba(254,219,55, 0.5) 100%), url("../img/background1.jpg.jpg");*/
+  background-image: url("../img/background1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
+
 .masthead h1 {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 3.5rem;
@@ -10247,6 +10253,41 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
 }
+
+.masthead-heading {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 4.2rem;
+  line-height: 4.2rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(#FDB931, #FEDB37);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.masthead-heading-counter {
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0.5rem;
+}
+
+.image-blurred-edge {
+  display:block;
+  position:relative;
+}
+
+.image-blurred-edge:before
+{
+  display:block;
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  -moz-box-shadow:inset 0 0 6px 6px rgba(255,255,255,0.8);
+  -webkit-box-shadow:inset 0 0 6px 6px rgba(255,255,255,0.8);
+  box-shadow:inset 0 0 6px 6px rgba(255,255,255,0.8);
+}
+
 .masthead h2 {
   max-width: 20rem;
   font-size: 1rem;
